@@ -6,23 +6,28 @@ import { Code2, Layers, Users, FileSpreadsheet } from 'lucide-react';
 const skillCategories = [
   {
     icon: Code2,
-    title: 'Frameworks & Tools',
-    skills: ['Jetpack Compose', 'Retrofit', 'Firebase', 'Salesforce', 'Git', 'GitHub', 'RoomDB', 'Hilt'],
+    title: 'Languages',
+    skills: ['JavaScript', 'HTML', 'CSS', 'Kotlin', 'Jetpack Compose', 'Java', 'Python'],
   },
   {
     icon: Layers,
-    title: 'Architecture & Design',
-    skills: ['MVVM', 'MVC', 'UI/UX Design', 'Clean Architecture', 'Responsive Design'],
+    title: 'Frameworks & Tools',
+    skills: ['Retrofit', 'Firebase', 'Salesforce', 'Git', 'GitHub', 'RoomDB', 'Hilt'],
   },
   {
     icon: Users,
+    title: 'Architecture & Design',
+    skills: ['MVVM', 'MVC', 'UI/UX Design Principles'],
+  },
+  {
+    icon: FileSpreadsheet,
     title: 'Soft Skills',
-    skills: ['Data Analysis', 'Teamwork', 'Communication', 'Problem Solving', 'Critical Thinking'],
+    skills: ['Data Analysis', 'Teamwork', 'Communication', 'Problem Solving'],
   },
   {
     icon: FileSpreadsheet,
     title: 'Productivity Tools',
-    skills: ['Microsoft Excel', 'Microsoft Word', 'PowerPoint', 'Google Workspace'],
+    skills: ['Microsoft Excel', 'Microsoft Word', 'PowerPoint'],
   },
 ];
 
@@ -79,27 +84,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Languages Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 text-center"
-        >
-          <h3 className="font-display text-xl font-semibold text-foreground mb-6">
-            Programming Languages
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {['Kotlin', 'Java', 'Python', 'JavaScript', 'SQL', 'Apex'].map((lang) => (
-              <div
-                key={lang}
-                className="px-6 py-3 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors"
-              >
-                <span className="font-medium text-foreground">{lang}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

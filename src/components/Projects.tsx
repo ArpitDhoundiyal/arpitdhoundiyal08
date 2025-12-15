@@ -1,50 +1,43 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Github, ExternalLink, Cloud, Phone, Film } from 'lucide-react';
+import { Github, ExternalLink, Cloud, Phone, Film, Music } from 'lucide-react';
 
 const projects = [
   {
     icon: Cloud,
-    title: 'Weather Application',
-    period: '2024 – Present',
-    description: 'A real-time weather application that provides accurate weather data and forecasts based on user location.',
-    techStack: ['Kotlin', 'OpenWeather API', 'Retrofit', 'GPS Integration', 'Jetpack Compose'],
-    features: [
-      'Real-time weather data fetching',
-      'GPS-based location detection',
-      'Responsive and intuitive UI',
-      'Weather forecasts and alerts',
-    ],
-    github: 'https://github.com/ArpitDhoundiyal',
+    title: 'Weather Application (JavaScript)',
+    description: 'Web-based real-time weather app using OpenWeather API, responsive UI, and JavaScript.',
+    techStack: ['JavaScript', 'HTML', 'CSS', 'OpenWeather API'],
+    github: 'https://github.com/ArpitDhoundiyal/weather_app_js',
+  },
+  {
+    icon: Cloud,
+    title: 'Weather Application (Kotlin)',
+    description: 'Android weather app with real-time data, API integration, and modern UI using Kotlin.',
+    techStack: ['Kotlin', 'OpenWeather API', 'Retrofit', 'Jetpack Compose'],
+    github: 'https://github.com/ArpitDhoundiyal/Weather_App',
   },
   {
     icon: Phone,
     title: 'Call Management App',
-    period: '2024 – Present',
-    description: 'An Android application for efficiently managing call records and contacts with a modern, clean interface.',
-    techStack: ['Kotlin', 'RoomDB', 'Jetpack Compose', 'MVVM', 'Hilt'],
-    features: [
-      'Call history tracking',
-      'Contact management',
-      'Local data persistence',
-      'Clean architecture implementation',
-    ],
-    github: 'https://github.com/ArpitDhoundiyal',
+    description: 'Android app for managing call logs and contacts using RoomDB, Jetpack Compose, and MVVM.',
+    techStack: ['Kotlin', 'RoomDB', 'Jetpack Compose', 'MVVM'],
+    github: 'https://github.com/ArpitDhoundiyal/call_app',
   },
   {
     icon: Film,
     title: 'Movie Flow',
-    period: '2024 – Present',
-    description: 'A movie browsing application that lets users discover and explore movies with a seamless user experience.',
+    description: 'Movie browsing app using Kotlin Flow, Hilt, MVVM, Room, and LiveData for trending and upcoming movies.',
     techStack: ['Kotlin', 'Flow', 'Hilt', 'MVVM', 'Room', 'LiveData'],
-    features: [
-      'Movie catalog browsing',
-      'Search and filter functionality',
-      'Reactive data streams with Flow',
-      'Offline-first architecture',
-    ],
-    github: 'https://github.com/ArpitDhoundiyal',
+    github: 'https://github.com/ArpitDhoundiyal/Movies_Flow',
+  },
+  {
+    icon: Music,
+    title: 'Drum Beat',
+    description: 'Interactive drum beat web project showcasing JavaScript event handling and frontend skills.',
+    techStack: ['JavaScript', 'HTML', 'CSS'],
+    github: 'https://github.com/ArpitDhoundiyal/drum_beat',
   },
 ];
 
@@ -69,60 +62,48 @@ const Projects = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-card rounded-2xl p-6 md:p-8 border border-border card-hover group"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-card rounded-2xl p-6 border border-border card-hover group"
             >
-              <div className="flex items-center justify-between mb-6">
-                <div className="p-3 rounded-xl bg-primary/10">
-                  <project.icon className="text-primary" size={28} />
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <project.icon className="text-primary" size={24} />
                 </div>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="View on GitHub"
-                >
-                  <Github size={20} />
-                </a>
               </div>
 
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-3">
                 {project.title}
               </h3>
-              <p className="text-sm text-primary font-medium mb-4">{project.period}</p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                 {project.description}
               </p>
 
-              <div className="mb-6">
-                <h4 className="text-sm font-medium text-foreground mb-3">Key Features</h4>
-                <ul className="space-y-2">
-                  {project.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="w-1 h-1 bg-primary rounded-full mt-2 shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 text-xs bg-secondary rounded-full text-secondary-foreground"
+                    className="px-3 py-1 text-xs bg-primary/10 text-primary rounded-full font-medium"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
+
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Github size={16} />
+                View on GitHub
+              </a>
             </motion.div>
           ))}
         </div>
