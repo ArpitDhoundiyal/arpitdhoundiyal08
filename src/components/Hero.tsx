@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import profilePhoto from '@/assets/profile-photo.png';
 
 const Hero = () => {
@@ -77,6 +77,14 @@ const Hero = () => {
               className="px-8 py-3 border border-border text-foreground font-semibold rounded-full hover:bg-secondary transition-colors"
             >
               Contact Me
+            </a>
+            <a
+              href="/resume.png"
+              download="Arpit_Dhoundiyal_Resume.png"
+              className="px-8 py-3 bg-secondary text-foreground font-semibold rounded-full hover:bg-secondary/80 transition-colors flex items-center gap-2"
+            >
+              <Download size={18} />
+              Download CV
             </a>
           </motion.div>
 
