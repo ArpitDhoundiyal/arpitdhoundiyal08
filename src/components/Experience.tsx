@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 const experiences = [
   {
@@ -9,6 +9,7 @@ const experiences = [
     company: 'freeCodeCamp',
     period: 'Oct 2025 – Dec 2025',
     location: 'Virtual',
+    certificateUrl: 'https://www.freecodecamp.org/certification/fccb72319d5-c1f3-4686-810b-54231b7fbd33/javascript-v9',
     description: [
       'Learned DOM manipulation, async programming, event handling, and problem-solving with algorithms & data structures',
       'Practiced functions, arrays, objects, and callback/Promise-based workflows',
@@ -19,6 +20,7 @@ const experiences = [
     company: 'Internshala Trainings',
     period: 'Oct 2024 – Dec 2024',
     location: 'Virtual',
+    certificateUrl: 'https://trainings.internshala.com/view_certificate/j7ohz6yz0ep/ei3fojapm11/',
     description: [
       '8-week intensive training program',
       'Mastered Kotlin and Jetpack Compose',
@@ -31,6 +33,7 @@ const experiences = [
     company: 'Smart Internz',
     period: 'Sep 2024 – Oct 2024',
     location: 'Virtual',
+    certificateUrl: 'https://www.linkedin.com/posts/arpitdhoundiyal_generativeai-activity-7259961897603506176-LABs?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyZz6kBvc94vkF__ydtYQseJmXFq2FZ5B0',
     description: [
       'Participated in Google Cloud Generative AI program',
       'Built AI-powered application features',
@@ -42,6 +45,7 @@ const experiences = [
     company: 'Smart Internz',
     period: 'May 2024 – Jul 2024',
     location: 'Virtual',
+    certificateUrl: 'https://www.linkedin.com/posts/arpitdhoundiyal_salesforcecertificate-activity-7213921809694384130-FD9L?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyZz6kBvc94vkF__ydtYQseJmXFq2FZ5B0',
     description: [
       'Learned Salesforce fundamentals and platform architecture',
       'Worked on automation and CRM solutions',
@@ -115,7 +119,7 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-4">
                       {exp.description.map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-muted-foreground">
                           <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
@@ -123,6 +127,18 @@ const Experience = () => {
                         </li>
                       ))}
                     </ul>
+
+                    {exp.certificateUrl && (
+                      <a
+                        href={exp.certificateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                      >
+                        <ExternalLink size={14} />
+                        View Certificate
+                      </a>
+                    )}
                   </div>
                 </div>
 
