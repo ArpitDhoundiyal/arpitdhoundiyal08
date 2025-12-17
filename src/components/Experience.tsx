@@ -5,6 +5,16 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 const experiences = [
   {
+    title: 'JavaScript',
+    company: 'freeCodeCamp',
+    period: 'Oct 2025 – Dec 2025',
+    location: 'Virtual',
+    description: [
+      'Learned DOM manipulation, async programming, event handling, and problem-solving with algorithms & data structures',
+      'Practiced functions, arrays, objects, and callback/Promise-based workflows',
+    ],
+  },
+  {
     title: 'Android App Development Training',
     company: 'Internshala Trainings',
     period: 'Oct 2024 – Dec 2024',
