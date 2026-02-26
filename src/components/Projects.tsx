@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Github, ExternalLink, Cloud, Phone, Film, Music } from 'lucide-react';
+import { Github, ExternalLink, Cloud, Phone, Film, Music, HeartPulse } from 'lucide-react';
 
 const projects = [
+  {
+    icon: HeartPulse,
+    title: 'Smart BMI & AI Wellness App',
+    description: 'Smart health app that computes BMI and uses AI API for personalized fitness and mental wellness recommendations with Firebase backend.',
+    techStack: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Firebase', 'Firestore', 'Retrofit', 'REST APIs'],
+    github: 'https://github.com/ArpitDhoundiyal/BMI',
+  },
   {
     icon: Cloud,
     title: 'Weather Application (JavaScript)',
@@ -38,13 +45,6 @@ const projects = [
     description: 'Interactive drum beat web project showcasing JavaScript event handling and frontend skills.',
     techStack: ['JavaScript', 'HTML', 'CSS'],
     github: 'https://github.com/ArpitDhoundiyal/drum_beat',
-  },
-  {
-    icon: Phone,
-    title: 'Smart BMI & AI Wellness App',
-    description: 'Smart health app that computes BMI and uses AI API for personalized fitness and mental wellness recommendations with Firebase backend.',
-    techStack: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Firebase', 'Firestore', 'Retrofit', 'REST APIs'],
-    github: 'https://github.com/ArpitDhoundiyal/BMI',
   },
 ];
 
