@@ -39,6 +39,13 @@ const projects = [
     techStack: ['JavaScript', 'HTML', 'CSS'],
     github: 'https://github.com/ArpitDhoundiyal/drum_beat',
   },
+  {
+    icon: Phone,
+    title: 'Smart BMI & AI Wellness App',
+    description: 'Smart health app that computes BMI and uses AI API for personalized fitness and mental wellness recommendations with Firebase backend.',
+    techStack: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Firebase', 'Firestore', 'Retrofit', 'REST APIs'],
+    github: 'https://github.com/ArpitDhoundiyal/BMI',
+  },
 ];
 
 const Projects = () => {
